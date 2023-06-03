@@ -135,6 +135,18 @@ body {
     background-color: #FF553F;
 }
 
+.footer .header__traffic  {
+    background-color: #FF442B;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.3s;
+    padding: 15px 50px;
+}
+
+.footer .header__traffic:hover  {
+    background-color: #FF553F;
+}
+
 .socials__icon {
     background-color: transparent;
     background-repeat: no-repeat;

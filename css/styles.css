@@ -62,87 +62,77 @@ body {
 
 /* Кнопка бургера */
 
-
-
-.nav-toggle {
-    border-radius: 8px;
+.menu-btn {
+    width: 48px;
+    height: 48px;
     position: relative;
-    padding: 10px;
-    background: transparent;
-    border: 1px solid #FF442B;
-    top: 20px;
-    right: -18px;
-    -webkit-transform: (-50%, -50%);
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
-.nav-toggle:focus {
-    outline-width: 0;
-}
-
-.nav-toggle [class*='bar-'] {
-    background: #FF442B;
-    display: block;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .2s ease all;
-    transition: .2s ease all;
-    height: 2px;
-    border-radius: 2px;
-    width: 20px;
-    margin-bottom: 6.2px;
-    -webkit-transform-origin: 10% 42%;
-    transform-origin: 14% 42%;
-}
-
-.benefits__img {
-    margin-bottom: 60px;
-    width: 100%;
-}
-
-.nav-toggle .bar-bot {
-    margin-bottom: 0;
-}
-
-.opened .bar-top {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.opened .bar-mid {
-    opacity: 0;
-}
-
-.opened .bar-bot {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-.menu__container {
-    width: 100%;
-    box-sizing: border-box;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    z-index: 11;
-    padding: 40px 20px 80px;
-    padding-top: 20px;
-    transition: 0.3s;
-    background-color: #FFFFFF;
     display: flex;
-    gap: 30px;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border: 1px solid #FF442B;
+    border-radius: 8px;
+}
+
+.menu-btn__burger {
+    width: 20px;
+    height: 2px;
+    background: #FF442B;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #FF442B;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-8px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(8px);
+}
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+    background: #FF442B;
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+    background: #FF442B;
+}
+
+.menu-btn.open {
+    border: 1px solid #FF442B;
 }
 
 /* Меню бургер */
 
-.header__traffic {
+.header .header__traffic {
     background-color: #FF442B;
     font-weight: 500;
     white-space: nowrap;
+    transition: 0.3s;
+    padding: 15px 50px;
+}
+
+.header__traffic:hover {
+    background-color: #FF553F;
 }
 
 .socials__icon {
@@ -152,6 +142,11 @@ body {
     width: 30px;
     height: 30px;
     display: block;
+    transition: 0.3s;
+}
+
+.socials__icon:hover {
+    opacity: 0.8;
 }
 
 .telegram {
@@ -187,11 +182,23 @@ body {
 
 .registration {
     background: #404989;
+    transition: 0.3s;
+}
+
+.registration:hover {
+    background-color: #4C57A4;
 }
 
 .login {
     border: 1px solid #404989;
     color: #404989;
+    transition: 0.3s;
+}
+
+.login:hover {
+    background-color: #4C57A4;
+    border: 1px solid #4C57A4;
+    color: #FFFFFF;
 }
 
 .header__btns {
@@ -289,6 +296,34 @@ body {
     padding: 29px 52px;
     display: inline-block;
     font-size: 20px;
+    transition: 0.3s;
+}
+
+.menu__container {
+    width: 100%;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 11;
+    padding: 40px 20px 80px;
+    padding-top: 20px;
+    transition: 0.3s;
+    background-color: #FFFFFF;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.menu-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hero__registration:hover {
+    background-color: #FF553F;
 }
 
 .about {
@@ -559,6 +594,14 @@ body {
     font-size: 21px;
     padding: 25px 40px;
     display: inline-block;
+    border: 1px solid #FFFFFF;
+    transition: 0.3s;
+}
+
+.invite__btn:hover {
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
 }
 
 .invite__logo {
